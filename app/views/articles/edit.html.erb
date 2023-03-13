@@ -1,0 +1,7 @@
+<h1>Edit Article</h1>
+<!-- <%= render "form", article: @article, scope: :article %> -->
+<%= form_with model: @article, url: show_article_path(@article), method: :patch, local: true do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>

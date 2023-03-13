@@ -1,0 +1,25 @@
+<table>
+  Articles Table
+  <thead>
+    <tr>
+      <th>Actions</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |a| %>
+      <tr>
+        <td> <%= button_to "Delete", show_article_path(a), method: :delete %> <td>
+        <td> <%= link_to "Delete", show_article_path(a), method: :delete, data: { "turbo-method": :delete }%> <td>
+        <td> <%= link_to "Edit", edit_article_path(a) %> <td>
+        <td> <%= a.id %> </td>
+        <td> <%= a.name %> </td>
+        <td> <%= a.body %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add", new_article_path %>
