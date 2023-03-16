@@ -80,7 +80,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  #  <<: *default
+  #  database: rails_blog_production
+  #  username: rails_blog
+  #  password: <%= ENV["RAILS_BLOG_DATABASE_PASSWORD"] %>
+  #  production:
   <<: *default
-  database: rails_blog_production
-  username: rails_blog
-  password: <%= ENV["RAILS_BLOG_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
